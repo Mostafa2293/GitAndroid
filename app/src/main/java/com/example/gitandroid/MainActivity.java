@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtHelloWorld;
     private TextView txtHiWorld;
+    private boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +21,22 @@ public class MainActivity extends AppCompatActivity {
         txtHelloWorld = findViewById(R.id.txtHelloWorld);
         txtHiWorld = findViewById(R.id.txtHiWorld);
 
+
         txtHelloWorld.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtHelloWorld.animate().alpha(0).setDuration(3000);
-                txtHiWorld.animate().alpha(1).setDuration(3000);
+                if (flag) {
 
+                    txtHelloWorld.animate().alpha(0).setDuration(3000);
+                    txtHiWorld.animate().alpha(1).setDuration(3000);
+                    flag = false;
+                } else {
+
+                    txtHelloWorld.animate().alpha(1).setDuration(3000);
+                    txtHiWorld.animate().alpha(0).setDuration(3000);
+                    flag = true;
+
+                }
             }
         });
 
