@@ -19,4 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void test() {
+        Log.i("Method","this is the new branch MethodOne !!");
+    }
 }
