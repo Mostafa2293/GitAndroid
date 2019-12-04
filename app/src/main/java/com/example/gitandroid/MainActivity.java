@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtHelloWorld;
+    private TextView txtHiWorld;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +18,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         txtHelloWorld = findViewById(R.id.txtHelloWorld);
+        txtHiWorld = findViewById(R.id.txtHiWorld);
 
         txtHelloWorld.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtHelloWorld.animate().alpha(0.1f).setDuration(3000);
+                txtHelloWorld.animate().alpha(0).setDuration(3000);
+                txtHiWorld.animate().alpha(1).setDuration(3000);
+
             }
         });
 
